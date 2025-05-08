@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"python api/index.py\"",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "flask": "python api/index.py"
   },
   "dependencies": {
     "@clerk/clerk-js": "^4.65.5",
@@ -86,6 +87,7 @@
     "@types/react-dom": "^18",
     "@types/regenerator-runtime": "^0.13.5",
     "autoprefixer": "^10.0.1",
+    "concurrently": "^8.2.2",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
     "eslint-config-prettier": "^10.1.3",

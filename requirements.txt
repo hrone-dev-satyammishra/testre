@@ -1,5 +1,7 @@
 ultralytics
-flask
-flask-cors
+flask==2.2.3
+flask-cors==3.0.10
 mediapipe
 python-dotenv
+numpy
+opencv-python-headless
