@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  byteforce-hr1ai:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+      - "5000:5000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    devices:
+      - /dev/video0:/dev/video0
+    privileged: true
